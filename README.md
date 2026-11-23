@@ -22,7 +22,7 @@ Each skill is its own folder and its own Claude Code plugin. Install only the on
 npx skills add mfsass/skills --skill slop-diet
 ```
 
-The CLI asks which agents to install for (Claude Code, Codex, Cursor and others).
+Add `-a claude-code`, `-a codex` or `-a cursor` to pick the agent.
 
 ## Install any skill
 
