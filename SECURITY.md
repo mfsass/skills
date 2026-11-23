@@ -4,8 +4,7 @@ Skills run with your agent's permissions, so read a skill before you install it.
 
 ## What the skills here run
 
-- `slop-diet` ships Node scripts in `skills/slop-diet/scripts/`. `verify.mjs` starts a local headless browser (Playwright, Chrome or Edge), opens the file or URL you pass, and writes screenshots to `ui-capture/`. The scripts make no network requests of their own and send no telemetry. They have no npm dependencies.
-- `directory/slop-diet` (the Claude plugin directory edition) holds no code at all: Markdown, JSON, YAML and one PNG.
+- `slop-diet` ships Node scripts in `skills/slop-diet/scripts/`. `verify.mjs` starts a local headless browser (Playwright, Chrome or Edge), opens the file or URL you pass, and writes screenshots to `ui-capture/`. The scripts make no network requests of their own and send no telemetry. They have no npm dependencies; Playwright is used only if you already have it.
 
 ## Report a vulnerability
 

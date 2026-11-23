@@ -64,7 +64,7 @@ Skills run with your agent's permissions. Here, every script is plain Node with 
 
 ## Contributing
 
-Bug reports, sharper rules and new skills are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md), and [docs/adding-a-skill.md](docs/adding-a-skill.md) for a new skill.
+Bug reports, sharper rules and new skills are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits
 

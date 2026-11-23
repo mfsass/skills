@@ -9,21 +9,28 @@ Open an issue with the bug template. It asks for your agent, your OS and the out
 ## Change a skill
 
 1. Fork the repo and branch from `main`.
-2. Edit the skill under `skills/<name>/`. If you change `slop-diet`, make the same change in `directory/slop-diet/` (the edition with no code files) where it applies.
-3. Run the checks:
+2. Edit the skill under `skills/<name>/`.
+3. Run the checks (CI runs the same ones):
 
    ```bash
+   node .github/scripts/check-repo.mjs
    claude plugin validate . --strict
    claude plugin validate skills/<name> --strict
    npx -y skills add . --list
    ```
 
-   `directory/slop-diet` prints one warning about the `icon` field. That is expected.
 4. Add a line to `CHANGELOG.md` and open a pull request. Say what changed and what you ran.
 
 ## Add a skill
 
-Follow [docs/adding-a-skill.md](docs/adding-a-skill.md). Each skill is its own folder and its own Claude Code plugin, so people install only what they want.
+Each skill is its own folder and its own Claude Code plugin, so people install only what they want. A new skill needs:
+
+- `skills/<name>/SKILL.md` whose front matter `name` equals the folder name.
+- `skills/<name>/.claude-plugin/plugin.json` with the same name and an `x.y.z` version.
+- `skills/<name>/README.md` and `LICENSE`.
+- An entry in `.claude-plugin/marketplace.json`, a card in the root `README.md` and a `CHANGELOG.md` section for its version.
+
+Open an issue first if you are unsure the skill fits here.
 
 ## Rules for rules
 
