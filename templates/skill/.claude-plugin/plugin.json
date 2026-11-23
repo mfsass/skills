@@ -1,0 +1,10 @@
+{
+  "name": "your-skill-name",
+  "version": "0.1.0",
+  "description": "One sentence.",
+  "author": { "name": "mfsass", "url": "https://github.com/mfsass" },
+  "homepage": "https://github.com/mfsass/skills",
+  "repository": "https://github.com/mfsass/skills",
+  "license": "MIT",
+  "skills": ["./"]
+}
