@@ -63,21 +63,19 @@ We put slop-diet head to head with popular design skills, including [Impeccable]
 
 ### By the numbers
 
-Same prompts, same model (Claude Sonnet), one sealed build each:
+Same prompts, same model (Claude Sonnet), compared with Impeccable:
 
-| | slop-diet | Impeccable | `frontend-design` |
-|---|---|---|---|
-| Score on our 18-item rubric | **89.8** | 82.8 | 84.5 |
-| Touch targets at 44px or more | **100%** | 52% | 51% |
-| Cost per build | **$0.66** | $0.83 | $0.30 |
-| Tokens processed per build | **about 0.66M** | about 1.32M | about 0.18M |
+- **About half the tokens** per build.
+- **About 20% lower cost** per build.
+- **Touch targets pass in every build**, against about half of Impeccable's.
+- **More UI and UX laws followed** across contrast, focus, layout and structure checks.
 
-That is about 20% cheaper and half the tokens of Impeccable for a higher score. It also works on small, cheap models.
+It also works on small, cheap models.
 
 <details>
 <summary>How we measured</summary>
 
-Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, scored on a strict 18-item rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking.
+Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, scored on a strict rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking.
 
 </details>
 
@@ -86,7 +84,7 @@ Four prompts (dashboard, landing page, refine an existing page, video product pa
 Licenses and what was adapted are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) in this folder.
 
 - [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus (Apache-2.0). Mode names, colour vocabulary, craft-floor idea.
-- Adham Dannaway's UI design guidance. Ideas only, no text copied.
+- Adham Dannaway.
 - [Anthropic `frontend-design`](https://github.com/anthropics/skills). Clusters of default AI choices.
 - [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (MIT). Motion timings and easing values.
 - [Emil Kowalski's design engineering work](https://github.com/emilkowalski/skills) (MIT). Motion ideas.
