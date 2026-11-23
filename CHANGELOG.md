@@ -45,7 +45,7 @@ Repo restructured as a multi-skill repo (`skills/<name>/`). `slop-diet` is the f
 - One value per rule: body 16-18px at 1.5 and 45-80ch, press `scale(.97)` in 120ms, review viewport 390x844, at most three pills per view.
 - Lint: `PASS` means zero open findings. `SLOP-VANITY-STATS` detects a stat grid of three or more bare figures with no source.
 - `capture-ui.mjs` and `probe-dots.mjs` fall back to headless Chrome, and print a NOTICE and exit 0 when no browser is found.
-- Credits added (Impeccable, Practical UI, `frontend-design`, UX laws, WCAG, Apple HIG).
+- Credits added (Impeccable, Adham Dannaway, `frontend-design`, UX laws, WCAG, Apple HIG).
 
 ## [0.2.0] - 2026-11-21
 

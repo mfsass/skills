@@ -45,7 +45,7 @@ SOFTWARE.
 
 ## Inspirations (no code or text copied)
 
-- Practical UI by Adham Dannaway (https://practical-ui.com)
+- Adham Dannaway's UI design guidance (ideas only, no text copied)
 - frontend-design skill by Anthropic (https://github.com/anthropics/skills)
 - emilkowalski/skills by Emil Kowalski, MIT (https://github.com/emilkowalski/skills): motion ideas (reveal distance, stagger, frequency gate), paraphrased
 

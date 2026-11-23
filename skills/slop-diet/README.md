@@ -59,25 +59,25 @@ Copy this folder (`skills/slop-diet/`) into `.agents/skills/` (Codex, Cursor) or
 
 ## How it compares
 
-We tested slop-diet side by side with Anthropic's [`frontend-design`](https://github.com/anthropics/skills), [Impeccable](https://github.com/pbakaus/impeccable), [jakubkrehel/skills](https://github.com/jakubkrehel/skills) and the [Practical UI](https://www.practical-ui.com) book. In our tests it was the most consistent at passing accessibility basics like contrast and touch targets. It also works well on small, cheap models.
+We put slop-diet head to head with popular design skills, including [Impeccable](https://github.com/pbakaus/impeccable) and Anthropic's [`frontend-design`](https://github.com/anthropics/skills). In our tests it followed the UI and UX laws most consistently, and it did so for less.
 
 ### By the numbers
 
-In our tests, on four prompts:
+Same prompts, same model (Claude Sonnet), one sealed build each:
 
-| | slop-diet | Others |
-|---|---|---|
-| Score on our rubric | **89.9** (Haiku) | 82.8 Impeccable, 84.5 `frontend-design` (Sonnet) |
-| Builds that fail an accessibility floor check | **0 of 4** (Haiku) | 4 of 4 for every arm without slop-diet |
-| Touch targets at 44px or more | **100%** | about 52% for Impeccable |
-| Cost per build | **about $0.03** (Haiku) | $0.83 Impeccable (Sonnet) |
+| | slop-diet | Impeccable | `frontend-design` |
+|---|---|---|---|
+| Score on our 18-item rubric | **89.8** | 82.8 | 84.5 |
+| Touch targets at 44px or more | **100%** | 52% | 51% |
+| Cost per build | **$0.66** | $0.83 | $0.30 |
+| Tokens processed per build | **about 0.66M** | about 1.32M | about 0.18M |
 
-On Sonnet, slop-diet costs $0.66 per build against $0.83 for Impeccable, about 20% cheaper.
+That is about 20% cheaper and half the tokens of Impeccable for a higher score. It also works on small, cheap models.
 
 <details>
 <summary>How we measured</summary>
 
-Four prompts, one sealed build each, strict 18-item rubric (16 scripted checks). The rubric is our own and the data is private, so read this as a signal, not a ranking. The Practical UI chapters fed in whole scored highest (91.7).
+Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, scored on a strict 18-item rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking.
 
 </details>
 
@@ -86,7 +86,7 @@ Four prompts, one sealed build each, strict 18-item rubric (16 scripted checks).
 Licenses and what was adapted are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) in this folder.
 
 - [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus (Apache-2.0). Mode names, colour vocabulary, craft-floor idea.
-- [Practical UI](https://www.practical-ui.com) by Adham Dannaway. Ideas only.
+- Adham Dannaway's UI design guidance. Ideas only, no text copied.
 - [Anthropic `frontend-design`](https://github.com/anthropics/skills). Clusters of default AI choices.
 - [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (MIT). Motion timings and easing values.
 - [Emil Kowalski's design engineering work](https://github.com/emilkowalski/skills) (MIT). Motion ideas.
