@@ -23,3 +23,7 @@ Each skill is a folder under `skills/` and also its own Claude Code plugin, so p
    ```
 
 The Skills CLI finds every `skills/*/SKILL.md` on its own, so `npx skills add mfsass/skills --skill <name>` works with no extra step. `templates/` is outside `skills/` and is not in the marketplace, so neither the CLI nor Claude Code lists it.
+
+## The directory edition
+
+`directory/slop-diet/` is a separate edition for the Claude plugin directory, which refuses code files from unverified publishers. It carries only Markdown, JSON, YAML and PNG, and keeps the script checks as hand checks in `references/without-scripts.md`. When you change `skills/slop-diet/`, make the matching change there. `claude plugin validate directory/slop-diet --strict` prints one warning about the `icon` field; the directory portal reads that field, so leave it.

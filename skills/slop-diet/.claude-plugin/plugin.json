@@ -1,7 +1,7 @@
 {
   "name": "slop-diet",
-  "version": "0.3.1",
-  "description": "Build web interfaces with concrete craft rules and deterministic contrast and touch-target checks, so they do not look like generic AI templates.",
+  "version": "0.3.2",
+  "description": "Makes coding agents follow UI and UX design laws, then checks the page in a real browser.",
   "author": {
     "name": "mfsass",
     "url": "https://github.com/mfsass"

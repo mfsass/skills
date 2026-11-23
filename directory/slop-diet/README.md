@@ -1,8 +1,8 @@
 # slop-diet
 
-Make AI-built interfaces look designed, not generated.
+Makes coding agents follow UI and UX design laws, then checks the finished page against a numbered checklist.
 
-slop-diet is for people who build web UIs with Claude Code and keep getting the same generic, AI-looking page. It gives Claude concrete design rules, then a checklist to verify the finished page.
+Agents skip the basic UI and UX laws, so you fix the same things every time: low-contrast text, tiny tap targets, a page that breaks on a phone, hype copy, neon gradients. slop-diet gives Claude concrete rules for spacing, type, contrast, touch targets and motion, then a checklist to verify the finished page.
 
 ## What it does
 
@@ -11,6 +11,19 @@ slop-diet is for people who build web UIs with Claude Code and keep getting the 
 - **No AI tells.** Hype copy, decorative dots, pill clutter and neon gradients stay out.
 - **Motion with a purpose.** Animation never hides content, and it stops under reduced motion.
 - **Your brief wins.** If you ask for something a rule bans, the skill follows you.
+
+## The rules, in numbers
+
+| Area | Rule |
+|---|---|
+| Touch targets | 44 x 44 px or larger, and no two targets overlap |
+| Contrast | 4.5:1 for text in every state: rest, hover, focus and active |
+| Focus | A visible ring of 3:1 contrast and at least 2 px |
+| Type | Body 16 to 18 px, line height 1.5, lines of 45 to 80 characters |
+| Spacing | An 8 pt scale, tighter inside a group than between groups |
+| Widths | Nothing overlaps, clips or scrolls sideways at 320, 390 and 1440 px |
+| Structure | One `h1`, no skipped heading levels, a `main` landmark, 7 nav links or fewer |
+| Motion | Content shows without JavaScript and stops animating under reduced motion |
 
 ## What is in this edition
 

@@ -45,7 +45,7 @@ SOFTWARE.
 
 ## Inspirations (no code or text copied)
 
-- Adham Dannaway
+- Adham Dannaway, product designer and author of Practical UI (UI design guidelines): UI design guidance that shaped the rules, paraphrased
 - frontend-design skill by Anthropic (https://github.com/anthropics/skills)
 - emilkowalski/skills by Emil Kowalski, MIT (https://github.com/emilkowalski/skills): motion ideas (reveal distance, stagger, frequency gate), paraphrased
 

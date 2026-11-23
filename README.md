@@ -2,6 +2,8 @@
 
 <p align="center"><strong>Agent skills that make coding agents follow real craft rules, then check the result.</strong></p>
 
+<p align="center">Open source, MIT. Each skill installs on its own, for Claude Code, Codex and Cursor.</p>
+
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
   <img alt="Node 22+" src="https://img.shields.io/badge/Node-22%2B-339933.svg">
@@ -47,7 +49,7 @@ Add `-g` to install for all projects. Run `npx skills add mfsass/skills --list` 
 
 ### [slop-diet](skills/slop-diet/README.md)
 
-Build and refine landing pages, SaaS screens, pricing, checkout and forms without the generic AI look. The agent follows concrete design rules, then a real browser checks contrast and touch targets.
+Makes coding agents follow UI and UX design laws, then checks the page in a real browser. For landing pages, SaaS screens, pricing, checkout and forms. Works with Claude Code, Codex and Cursor.
 
 [<img src="docs/images/slop-diet/demo.gif" alt="slop-diet in 30 seconds" width="480">](skills/slop-diet/README.md)
 

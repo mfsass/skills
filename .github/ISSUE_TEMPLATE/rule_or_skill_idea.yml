@@ -1,0 +1,16 @@
+name: Rule or skill idea
+description: Suggest a design rule, a missing check, or a new skill
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: For a rule, give the number or the check someone can run.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Where it comes from
+      description: A guideline, a standard or a page that shows the problem.
