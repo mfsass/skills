@@ -49,6 +49,12 @@ Copy this folder (`skills/slop-diet/`) into `.agents/skills/` (Codex, Cursor) or
 > [!TIP]
 > After installing, try: `Build a pricing page for my invoicing app`
 
+## Why I built it
+
+Ask any coding agent for a landing page and you can spot that an agent made it: a pulsing dot next to a "New" pill, a purple-to-blue gradient, glassy cards with a glow, five accent colours, an ALL-CAPS eyebrow over every heading, an arrow on every button, emoji standing in for icons. Under the look, the basics fail: grey-on-white text below 4.5:1, 20px tap targets, a layout that scrolls sideways on a phone.
+
+"Make it look good" doesn't fix that, because it isn't a rule. So I wrote the rules down with numbers, and added scripts so the agent has to prove the page passes before it says it's done.
+
 ## What it does
 
 - **Your pages pass the basics.** Contrast and touch-target checks run in a real browser, and the agent fixes what fails.
@@ -89,7 +95,7 @@ We put slop-diet head to head with the leading front-end skills: [Impeccable](ht
 Same prompts, same model (Claude Haiku), against taste-skill, Impeccable and `frontend-design`:
 
 - **11 to 14% higher** on our design-law checks than each of them.
-- **Touch targets pass in every build**, against 20 to 44% for the others.
+- **Touch targets pass in all 4 builds.** The others scored 20 to 44% on the touch-target check.
 - **Fewer floor failures:** 1 of 4 builds, against 4 of 4 for every other skill.
 
 On Haiku, slop-diet costs more per build than Impeccable and `frontend-design`, so we make no cost claim.
