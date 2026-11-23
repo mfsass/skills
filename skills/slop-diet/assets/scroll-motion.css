@@ -1,0 +1,16 @@
+/* Scroll motion: pair with scroll-motion.js. Hidden start states exist only under html.js, so the page is complete at rest. */
+/* Transitions sit on .is-in, so the hidden state is instant (no fade-out flash when js is added). */
+@media (prefers-reduced-motion: no-preference) {
+  [data-count] { font-variant-numeric: tabular-nums; }
+  .js [data-m], .js [data-grow], .js [data-draw] { --d: calc(var(--i, 0) * var(--step, 60ms)); } /* inline --d overrides, e.g. area fill after the line */
+  .js [data-m]:not(.is-in) { opacity: 0; transform: translateY(8px); }
+  .js [data-m].is-in { transition: opacity 280ms cubic-bezier(.23, 1, .32, 1) var(--d), transform 280ms cubic-bezier(.23, 1, .32, 1) var(--d); }
+  .js [data-grow] { transform-origin: bottom; } /* data-grow="x" grows from the left */
+  .js [data-grow="x"] { transform-origin: left; }
+  .js [data-grow]:not(.is-in) { transform: scaleY(0); }
+  .js [data-grow="x"]:not(.is-in) { transform: scaleX(0); }
+  .js [data-grow].is-in { transition: transform 600ms cubic-bezier(.23, 1, .32, 1) var(--d); } /* house default */
+  .js [data-draw] { stroke-dasharray: 1; } /* path has pathLength="1" */
+  .js [data-draw]:not(.is-in) { stroke-dashoffset: 1; }
+  .js [data-draw].is-in { transition: stroke-dashoffset 1000ms cubic-bezier(.25, 1, .5, 1); }
+}

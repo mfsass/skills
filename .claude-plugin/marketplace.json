@@ -1,0 +1,14 @@
+{
+  "name": "mfsass-skills",
+  "owner": { "name": "mfsass", "url": "https://github.com/mfsass" },
+  "metadata": { "description": "Agent skills by mfsass. First skill: slop-diet." },
+  "plugins": [
+    {
+      "name": "mfsass-skills",
+      "source": "./",
+      "description": "Build web UI with concrete craft rules and deterministic checks.",
+      "category": "design",
+      "tags": ["design", "ui", "frontend", "accessibility"]
+    }
+  ]
+}
