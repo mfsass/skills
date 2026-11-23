@@ -59,7 +59,7 @@ Copy this folder (`skills/slop-diet/`) into `.agents/skills/` (Codex, Cursor) or
 
 ## How it compares
 
-We put slop-diet head to head with the leading front-end skills: [Impeccable](https://github.com/pbakaus/impeccable), [taste-skill](https://github.com/Leonxlnx/taste-skill) and Anthropic's [`frontend-design`](https://github.com/anthropics/skills). In our tests it followed the UI and UX laws most consistently, and it did so for less.
+We put slop-diet head to head with the leading front-end skills: [Impeccable](https://github.com/pbakaus/impeccable), [taste-skill](https://github.com/Leonxlnx/taste-skill) and Anthropic's [`frontend-design`](https://github.com/anthropics/skills). In our tests it followed the UI and UX laws most consistently.
 
 ### By the numbers
 
