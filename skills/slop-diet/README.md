@@ -59,23 +59,22 @@ Copy this folder (`skills/slop-diet/`) into `.agents/skills/` (Codex, Cursor) or
 
 ## How it compares
 
-We put slop-diet head to head with popular design skills, including [Impeccable](https://github.com/pbakaus/impeccable) and Anthropic's [`frontend-design`](https://github.com/anthropics/skills). In our tests it followed the UI and UX laws most consistently, and it did so for less.
+We put slop-diet head to head with the leading front-end skills: [Impeccable](https://github.com/pbakaus/impeccable), [taste-skill](https://github.com/Leonxlnx/taste-skill) and Anthropic's [`frontend-design`](https://github.com/anthropics/skills). In our tests it followed the UI and UX laws most consistently, and it did so for less.
 
 ### By the numbers
 
-Same prompts, same model (Claude Sonnet), compared with Impeccable:
+Same prompts, same model (Claude Haiku), against taste-skill, Impeccable and `frontend-design`:
 
-- **About half the tokens** per build.
-- **About 20% lower cost** per build.
-- **Touch targets pass in every build**, against about half of Impeccable's.
-- **More UI and UX laws followed** across contrast, focus, layout and structure checks.
+- **11 to 14% higher** on our design-law checks than each of them.
+- **Touch targets pass in every build**, against 20 to 44% for the others.
+- **Fewer floor failures:** 1 of 4 builds, against 4 of 4 for every other skill.
 
-It also works on small, cheap models.
+On Claude Sonnet, against Impeccable, it also used about half the tokens and cost about 20% less per build.
 
 <details>
 <summary>How we measured</summary>
 
-Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, scored on a strict rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking.
+Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, on Claude Haiku and Claude Sonnet, scored on a strict rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking.
 
 </details>
 
