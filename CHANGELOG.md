@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- `directory/slop-diet`: a Claude plugin directory edition for submission. It holds only Markdown, JSON, YAML and PNG (the directory refuses code files from unverified organisations): the CSS and JS starters are fenced code in `references/`, the script checks are hand checks in `references/without-scripts.md`, and it carries `.claude-plugin/icon.png`. Generated from the full skill; `skills/slop-diet` is unchanged for `npx skills add` and `/plugin install`.
+
 ### Changed
 - Each skill installs on its own. The repo-wide plugin is gone: `.claude-plugin/marketplace.json` lists one plugin per skill (`slop-diet` from `skills/slop-diet`), and the skill folder carries its own `.claude-plugin/plugin.json` and reviewer agent (`agents/reviewer.md`, named `slop-reviewer`). Install with `/plugin install slop-diet@mfsass-skills` or `npx skills add mfsass/skills --skill slop-diet`.
 - README: per-agent install notes, a "By the numbers" block and `docs/adding-a-skill.md`.

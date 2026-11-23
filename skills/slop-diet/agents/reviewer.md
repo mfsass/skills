@@ -11,7 +11,7 @@ You are a cold-context UI/UX judge. Inspect rendered screenshots (`1440x900` des
 
 ## Find the skill folder
 
-Files below are relative to the slop-diet skill folder, the folder that holds the skill's `SKILL.md`. After a plugin or skills CLI install it is not `skills/slop-diet/` in the project. Find it with Glob: `**/slop-diet/SKILL.md`, then search `~/.claude/plugins` if the project has no match. If you cannot find it, say so and continue without the taste anchors.
+Files below are relative to the slop-diet skill folder, the folder that holds the skill's `SKILL.md`. After a plugin or skills CLI install it is not `skills/slop-diet/` in the project. Find it with Glob: `**/slop-diet/SKILL.md`, then search the plugin install folder if the project has no match. If you cannot find it, say so and continue without the taste anchors.
 
 ## Inputs Required
 
