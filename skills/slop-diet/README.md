@@ -103,7 +103,7 @@ On Haiku, slop-diet costs more per build than Impeccable and `frontend-design`, 
 <details>
 <summary>How we measured</summary>
 
-Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, on Claude Haiku and Claude Sonnet, scored on a strict rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking.
+Four prompts (dashboard, landing page, refine an existing page, video product page), one sealed headless build per prompt and skill, on Claude Haiku and Claude Sonnet, scored on a strict rubric: 16 scripted checks (contrast in every state, touch targets, focus rings, overflow at 320, 390 and 1440 px, heading structure, content visible without JavaScript, AI tells) and 2 judge items. The rubric is our own and the data is private, so read this as a signal, not a ranking. Measured on slop-diet 0.3.0 and not re-run since.
 
 </details>
 

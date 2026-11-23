@@ -50,7 +50,7 @@ Makes coding agents follow UI and UX design laws, then checks the page in a real
 
 [<img src="docs/images/slop-diet/demo.gif" alt="slop-diet in 30 seconds: an agent builds a page, the skill applies design laws, the page passes its checks" width="480">](skills/slop-diet/README.md)
 
-Against Impeccable, taste-skill and Anthropic's `frontend-design`, on the same prompts with the same model, it scored 11 to 14% higher on our design-law checks. [How we measured](skills/slop-diet/README.md#how-it-compares).
+Against Impeccable, taste-skill and Anthropic's `frontend-design`, on the same prompts with the same model (Claude Haiku), it scored 11 to 14% higher on our design-law checks. [How we measured](skills/slop-diet/README.md#how-it-compares).
 
 ```bash
 npx skills add mfsass/skills --skill slop-diet
