@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+- Each skill installs on its own. The repo-wide plugin is gone: `.claude-plugin/marketplace.json` lists one plugin per skill (`slop-diet` from `skills/slop-diet`), and the skill folder carries its own `.claude-plugin/plugin.json` and reviewer agent (`agents/reviewer.md`, named `slop-reviewer`). Install with `/plugin install slop-diet@mfsass-skills` or `npx skills add mfsass/skills --skill slop-diet`.
+- README: per-agent install notes, a "By the numbers" block and `docs/adding-a-skill.md`.
+
 ## [0.3.1] - 2026-11-23
 
 ### Added

@@ -22,37 +22,28 @@
 
 ## Install
 
-```bash
-npx skills add mfsass/skills
-```
+Install one skill at a time. For `slop-diet`:
 
-That works for Cursor, Codex and most other agents. Other ways to install:
-
-<details>
-<summary><strong>Claude Code plugin</strong></summary>
+**Claude Code**
 
 ```text
 /plugin marketplace add mfsass/skills
-/plugin install mfsass-skills@mfsass-skills
+/plugin install slop-diet@mfsass-skills
 ```
 
-</details>
-
-<details>
-<summary><strong>Cursor, Codex and other agents</strong></summary>
-
-Use the [Skills CLI](https://skills.sh):
+**Codex, Cursor and most other agents** (with the [Skills CLI](https://skills.sh))
 
 ```bash
-npx skills add mfsass/skills
+npx skills add mfsass/skills --skill slop-diet -a codex
+npx skills add mfsass/skills --skill slop-diet -a cursor
 ```
 
-</details>
+This copies the skill to `.agents/skills/slop-diet`, where Codex and Cursor read it. Add `-g` to install for all projects. Use `-a claude-code` to skip the plugin (`.claude/skills`).
 
 <details>
 <summary><strong>Manual copy</strong></summary>
 
-Copy `skills/slop-diet/` into your agent's skills folder. The folder carries its own `LICENSE` and `THIRD_PARTY_NOTICES.md`, so a copy of the folder alone keeps the notices.
+Copy `skills/slop-diet/` into `.agents/skills/` (Codex, Cursor) or `.claude/skills/` (Claude Code). The folder carries its own `LICENSE` and `THIRD_PARTY_NOTICES.md`.
 
 </details>
 
@@ -62,8 +53,7 @@ Copy `skills/slop-diet/` into your agent's skills folder. The folder carries its
 ## What it does
 
 - **Your pages pass the basics.** Contrast and touch-target checks run in a real browser, and the agent fixes what fails.
-- **Real design rules.** Spacing, type and colour follow concrete numbers instead of a vague sense of taste.
-- **A direction that fits your product.** The agent picks a proven look for your domain, not a generic default.
+- **Real design rules.** Spacing, type and colour follow concrete numbers, with a look that fits your product.
 - **No AI tells.** Hype copy, pulsing dots and neon gradients stay out.
 - **Motion with a purpose.** Animation never hides content.
 - **Your brief wins.** If you ask for something a rule bans, the skill follows you.
@@ -76,7 +66,27 @@ Copy `skills/slop-diet/` into your agent's skills folder. The folder carries its
 
 ## How it compares
 
-We tested slop-diet side by side with Anthropic's [`frontend-design`](https://github.com/anthropics/skills), [Impeccable](https://github.com/pbakaus/impeccable), [jakubkrehel/skills](https://github.com/jakubkrehel/skills) and the [Practical UI](https://www.practical-ui.com) book. It was the most consistent at passing accessibility basics like contrast and touch targets. It also works well on small, cheap models.
+We tested slop-diet side by side with Anthropic's [`frontend-design`](https://github.com/anthropics/skills), [Impeccable](https://github.com/pbakaus/impeccable), [jakubkrehel/skills](https://github.com/jakubkrehel/skills) and the [Practical UI](https://www.practical-ui.com) book. In our tests it was the most consistent at passing accessibility basics like contrast and touch targets. It also works well on small, cheap models.
+
+### By the numbers
+
+In our tests, on four prompts:
+
+| | slop-diet | Others |
+|---|---|---|
+| Score on our rubric | **89.9** (Haiku) | 82.8 Impeccable, 84.5 `frontend-design` (Sonnet) |
+| Builds that fail an accessibility floor check | **0 of 4** (Haiku) | 4 of 4 for every arm without slop-diet |
+| Touch targets at 44px or more | **100%** | about 52% for Impeccable |
+| Cost per build | **about $0.03** (Haiku) | $0.83 Impeccable (Sonnet) |
+
+On Sonnet, slop-diet costs $0.66 per build against $0.83 for Impeccable, about 20% cheaper.
+
+<details>
+<summary>How we measured</summary>
+
+Four prompts, one sealed build each, strict 18-item rubric (16 scripted checks). The rubric is our own and the data is private, so read this as a signal, not a ranking. The Practical UI chapters fed in whole scored highest (91.7).
+
+</details>
 
 ## Skills in this repo
 
@@ -84,18 +94,18 @@ We tested slop-diet side by side with Anthropic's [`frontend-design`](https://gi
 |---|---|
 | [`slop-diet`](skills/slop-diet/SKILL.md) | Build or refine landing pages, SaaS screens, pricing, checkout and forms without the generic AI look. |
 
-More skills will be added here.
+Each skill is its own folder and its own Claude Code plugin. To add one, see [docs/adding-a-skill.md](docs/adding-a-skill.md).
 
 ## Credits
 
 Licenses and what was adapted are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-- [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus (Apache-2.0). Mode names, colour strategy vocabulary and the craft-floor idea.
-- [Practical UI](https://www.practical-ui.com) by Adham Dannaway. Ideas only. No text is copied.
-- [Anthropic `frontend-design` skill](https://github.com/anthropics/skills). The clusters of default AI choices that the AI-tells list avoids.
+- [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus (Apache-2.0). Mode names, colour vocabulary, craft-floor idea.
+- [Practical UI](https://www.practical-ui.com) by Adham Dannaway. Ideas only.
+- [Anthropic `frontend-design`](https://github.com/anthropics/skills). Clusters of default AI choices.
 - [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (MIT). Motion timings and easing values.
 - [Emil Kowalski's design engineering work](https://github.com/emilkowalski/skills) (MIT). Motion ideas.
-- [Laws of UX](https://lawsofux.com), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) and the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/). The numbers in the checklist follow them.
+- [Laws of UX](https://lawsofux.com), [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [Apple HIG](https://developer.apple.com/design/human-interface-guidelines/). Checklist numbers.
 
 ## License
 
