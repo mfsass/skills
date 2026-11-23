@@ -26,7 +26,8 @@ jobs:
       - name: Plugin manifests
         run: |
           npx -y @anthropic-ai/claude-code@2.1.221 plugin validate . --strict
-          npx -y @anthropic-ai/claude-code@2.1.221 plugin validate skills/slop-diet --strict      - name: Skills CLI finds every skill
+          npx -y @anthropic-ai/claude-code@2.1.221 plugin validate skills/slop-diet --strict
+      - name: Skills CLI finds every skill
         run: npx -y skills@1.9.0 add . --list
       - name: verify.mjs fails a bad page in a real browser
         run: |
