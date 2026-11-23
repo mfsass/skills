@@ -1,6 +1,6 @@
 ---
 name: slop-diet
-description: "Build, redesign and polish web UIs that a picky human passes on first look: landing pages, dashboards, pricing, settings, checkout, forms, onboarding. Use to fix generic AI-looking UI. Scripts check contrast, 44px targets and 320, 390, 1440 widths. Not for native mobile apps or backend code."
+description: "Use whenever you build, change or review any web page or UI, even a small one: landing pages, pricing, dashboards, settings, signup forms, checkout, onboarding, components, plain HTML and CSS, fixes for generic AI-looking design. Load it before you write markup. Not for native mobile apps or backend code."
 license: MIT
 ---
 
