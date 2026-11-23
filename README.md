@@ -10,66 +10,42 @@
 </p>
 
 <p align="center">
-  <a href="#install-any-skill">Install</a> ·
-  <a href="#skills">Skills</a> ·
-  <a href="#add-a-skill">Add a skill</a> ·
+  <a href="#slop-diet">slop-diet</a> ·
+  <a href="#install">Install</a> ·
   <a href="#credits">Credits</a>
 </p>
 
-Each skill is its own folder and its own Claude Code plugin. Install only the ones you want.
+## slop-diet
 
-```bash
-npx skills add mfsass/skills --skill slop-diet
-```
+Build and refine landing pages, SaaS screens, pricing, checkout and forms without the generic AI look. The agent follows concrete UI and UX design laws, then a real browser checks the finished page.
 
-Add `-a claude-code`, `-a codex` or `-a cursor` to pick the agent.
+[<img src="docs/images/slop-diet/demo.gif" alt="slop-diet in 30 seconds" width="100%">](skills/slop-diet/README.md)
 
-## Install any skill
+[Read more about slop-diet](skills/slop-diet/README.md): what it does, before and after, and how it compares.
+
+## Install
 
 **Claude Code**
 
 ```text
 /plugin marketplace add mfsass/skills
-/plugin install <skill>@mfsass-skills
+/plugin install slop-diet@mfsass-skills
 ```
 
 **Codex, Cursor and other agents** (with the [Skills CLI](https://skills.sh))
 
 ```bash
-npx skills add mfsass/skills --skill <skill> -a codex
-npx skills add mfsass/skills --skill <skill> -a cursor
-npx skills add mfsass/skills --skill <skill> -a claude-code
-```
-
-Add `-g` to install for all projects. Run `npx skills add mfsass/skills --list` to see every skill.
-
-## Skills
-
-### [slop-diet](skills/slop-diet/README.md)
-
-Build and refine landing pages, SaaS screens, pricing, checkout and forms without the generic AI look. The agent follows concrete design rules, then a real browser checks contrast and touch targets.
-
-[<img src="docs/images/slop-diet/demo.gif" alt="slop-diet in 30 seconds" width="480">](skills/slop-diet/README.md)
-
-```text
-/plugin install slop-diet@mfsass-skills
-```
-
-```bash
 npx skills add mfsass/skills --skill slop-diet -a codex
+npx skills add mfsass/skills --skill slop-diet -a cursor
 ```
 
-[Read more about slop-diet](skills/slop-diet/README.md)
+Add `-g` to install for all projects.
 
-More skills will follow.
-
-## Add a skill
-
-Copy the template, fill it in and add a card here. The steps are in [docs/adding-a-skill.md](docs/adding-a-skill.md).
+More skills are coming.
 
 ## Credits
 
-Licenses and what each skill adapted are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Skill-specific credits are on each skill page, for example [slop-diet](skills/slop-diet/README.md#credits).
+Licenses and what each skill adapted are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Skill credits are on the [slop-diet page](skills/slop-diet/README.md#credits).
 
 ## License
 
