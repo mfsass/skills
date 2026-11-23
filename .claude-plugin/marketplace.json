@@ -6,7 +6,7 @@
     {
       "name": "slop-diet",
       "source": "./skills/slop-diet",
-      "description": "Build web UI with concrete craft rules and deterministic checks.",
+      "description": "Makes coding agents follow UI and UX design laws, then checks the page in a real browser.",
       "category": "design",
       "tags": ["design", "ui", "frontend", "accessibility"]
     }

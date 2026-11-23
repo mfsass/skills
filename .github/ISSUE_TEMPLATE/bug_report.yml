@@ -1,0 +1,36 @@
+name: Bug report
+description: Something in a skill or its scripts does not work
+labels: [bug]
+body:
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent
+      options: [Claude Code, Codex, Cursor, Other]
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and browser
+      placeholder: Windows 11, Microsoft Edge
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: Skill and version
+      placeholder: slop-diet 0.3.2
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: Output of `node scripts/verify.mjs <page>`
+      render: text

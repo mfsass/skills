@@ -181,7 +181,7 @@ async function main() {
   if (failed.length) console.log(`  result    FAIL_FLOOR: ${failed.join(', ')}${errors.length ? `; ERROR: ${errors.join(', ')}` : ''} (exit 1)`);
   else if (errors.length) console.log(`  result    ERROR: ${errors.join(', ')} did not complete, so this is not a pass; fix the cause and run again (exit 2)`);
   else {
-    console.log(notice ? '  result    PASS lint floor; browser checks did not run (exit 0)' : '  result    PASS floor checks (exit 0)');
+    console.log(notice ? '  result    LINT ONLY: lint passed, but no browser checks ran, so contrast, targets and overflow are NOT verified (exit 0)' : '  result    PASS floor checks (exit 0)');
     if (!checklistDone) console.log("  Next: run the law-checklist pass (references/law-checklist.md) and report 'Checklist: ...'. Edits after it need a new verify run.");
   }
   return failed.length ? 1 : errors.length ? 2 : 0;

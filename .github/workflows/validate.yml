@@ -1,0 +1,36 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Repo checks
+        run: node .github/scripts/check-repo.mjs
+      - name: Lint self-test
+        run: node skills/slop-diet/scripts/slop-lint.mjs --selftest
+      - name: Plugin manifests
+        run: |
+          npx -y @anthropic-ai/claude-code@2.1.221 plugin validate . --strict
+          npx -y @anthropic-ai/claude-code@2.1.221 plugin validate skills/slop-diet --strict
+      - name: Skills CLI finds every skill
+        run: npx -y skills@1.9.0 add . --list
+      - name: verify.mjs fails a bad page in a real browser
+        run: |
+          printf '%s' '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>t</title></head><body><main><h1>t</h1><button style="width:20px;height:20px">x</button></main></body></html>' > /tmp/bad.html
+          set +e; node skills/slop-diet/scripts/verify.mjs /tmp/bad.html; code=$?; set -e
+          test "$code" -eq 1

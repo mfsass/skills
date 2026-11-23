@@ -1,6 +1,6 @@
 interface:
   display_name: "slop-diet"
-  short_description: "Build distinctive, zero-slop UI with deterministic UX-law evals and calibrated taste"
+  short_description: "Makes coding agents follow UI and UX design laws, then checks the page in a real browser."
   default_prompt: "Use $slop-diet to build or audit this interface, run scripts/verify.mjs from the skill folder until it passes, and polish both usability and visual craft."
 policy:
   allow_implicit_invocation: true

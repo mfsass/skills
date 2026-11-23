@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.2] - 2026-11-23
+
+- `verify.mjs` finds Microsoft Edge when Playwright and Chrome are missing, so the browser checks run on a stock Windows machine.
+- Without a browser, `verify.mjs` says plainly that contrast, targets and overflow were not checked (`LINT ONLY`, exit 0).
+- One description everywhere: "Makes coding agents follow UI and UX design laws, then checks the page in a real browser."
+
 ## [0.3.1] - 2026-11-23
 
 First public release of `slop-diet`.
