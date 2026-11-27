@@ -48,9 +48,9 @@ Pick one install per agent. The plugin and a copied skill together give you the 
 
 Makes coding agents follow UI and UX design laws, then checks the page in a real browser. For landing pages, SaaS screens, pricing, checkout and forms.
 
-[<img src="docs/images/slop-diet/demo.gif" alt="slop-diet in 30 seconds: an agent builds a page, the skill applies design laws, the page passes its checks" width="480">](skills/slop-diet/README.md)
+[<img src="docs/images/slop-diet/film.gif" alt="slop-diet launch film: an AI-template page, the laws the skill checks, and the same page after slop-diet" width="480">](skills/slop-diet/README.md)
 
-Against Impeccable, taste-skill and Anthropic's `frontend-design`, on the same prompts with the same model (Claude Haiku), it scored 11 to 14% higher on our design-law checks. [How we measured](skills/slop-diet/README.md#how-it-compares).
+On 4 fresh prompts with Claude Sonnet, all 8 slop-diet builds passed the law floors. Four other skills and no skill passed 0 of 20. [How we measured](skills/slop-diet/README.md#how-we-measured).
 
 ```bash
 npx skills add mfsass/skills --skill slop-diet

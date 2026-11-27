@@ -1,6 +1,6 @@
 {
   "name": "slop-diet",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Makes coding agents follow UI and UX design laws, then checks the page in a real browser.",
   "author": {
     "name": "mfsass",

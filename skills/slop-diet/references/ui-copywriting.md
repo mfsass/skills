@@ -2,13 +2,15 @@
 
 Generated copy fails the same way generated visuals do: it is generic, inflated and could sit on any product. A reviewer reads "Unlock 10x velocity" and stops trusting the whole screen. Write copy that only this product could use.
 
-## Five rules
+## Rules
 
 1. **Name the domain object.** The headline says what the product does to what thing, for whom. "Hear the room before you build it" (acoustics). "Every open incident, worst first" (ops). "Fresh-roasted beans, every two weeks" (coffee).
 2. **Lead with the fact.** Put the key word or number first in headings, buttons, list items and links. Cut "In order to", "Would you like to", "There are".
 3. **Use real numbers and units.** "Ships in 2 days", "P95 412 ms", "€14 per 250 g bag". Never invent impressive stats. If no number is known, describe the mechanism instead.
 4. **Verb plus noun on every action.** "Start subscription", "Assign to me", "Run simulation", "Clear filters". Never "Submit", "Go", "Learn more" or "Click here".
 5. **One word per concept.** If it is a "subscription", it is never also a "plan" or "membership" on the same screen. Keep sentence case everywhere.
+6. **Write the short label for 390px.** A button or tab label of more than 14 characters at 1440px gets a shorter form at 390px ("Skip for now" becomes "Skip"). Use two spans, one shown above 600px and one below. Never use ellipsis, and never let a label wrap one word per line.
+7. **Real punctuation.** Curly quotes, an en dash for ranges (9–5) and `…`, except in code and attributes. A long file name truncates in the middle and keeps its extension (`report-fin….pptx`).
 
 ## Banned phrases (lint-checked where possible)
 
