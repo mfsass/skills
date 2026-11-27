@@ -32,12 +32,6 @@ export function findChrome() {
     '/usr/bin/chromium-browser',
     'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
-    process.env.LOCALAPPDATA && join(process.env.LOCALAPPDATA, 'Google', 'Chrome', 'Application', 'chrome.exe'),
-    // Edge is Chromium and ships with Windows, so it is the usual fallback there.
-    'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
-    'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
-    '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
-    '/usr/bin/microsoft-edge',
   ].filter(Boolean);
   for (const path of fixed) if (existsSync(path)) return path;
   for (const dir of (process.env.PATH || '').split(delimiter)) {
@@ -213,8 +207,8 @@ export async function openBrowser({ timeout = 30000 } = {}) {
       return { kind: 'chrome', browser, ...browser };
     } catch (error) { throw new Error(`browser found at ${chromePath} but it did not start (${error.message})`); }
   }
-  return { kind: null, reason: 'Playwright, Google Chrome and Microsoft Edge were not found' };
+  return { kind: null, reason: 'Playwright and Google Chrome were not found' };
 }
 
 export const noBrowserNotice = (tool, reason) =>
-  `NOTICE: ${tool} did not run because no browser is available (${reason}). Install Playwright, Google Chrome or Microsoft Edge (or set CHROME_PATH), or check the page by eye in a screenshot.`;
+  `NOTICE: ${tool} did not run because no browser is available (${reason}). Install Playwright or Google Chrome, or check the page by eye in a screenshot.`;

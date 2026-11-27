@@ -3,8 +3,12 @@
    A pressable button needs one .ui-craft-pressable__surface child.
    Use disabled for native suppression. aria-disabled needs an application guard.
    Pressure feedback changes the inner surface. The native hit area stays stable.
-   The press scale has one owner: this file for .ui-craft-pressable, the shared block in craft-floor.md for other controls (it skips .ui-craft-pressable).
-   Switch sign, position, stretch, and squish properties hold internal state. */
+   One element has one press owner: this file for .ui-craft-pressable, the page's own rules for other controls.
+   The default press (1px travel, scale .97) is one option. For a fill press set --craft-press-travel: 0,
+   --craft-press-scale: 1 and --craft-control-pressed-bg. Choose what fits the product.
+   Switch sign, position, stretch, and squish properties hold internal state.
+   The surface look, hover, press and pressed fill sit in :where() (specificity 0), so any rule the page writes wins.
+   The visible feedback is the law; its look is a default. */
 .ui-craft-pressable {
   appearance: none;
   display: inline-grid;
@@ -18,7 +22,7 @@
   cursor: pointer;
   touch-action: manipulation;
 }
-.ui-craft-pressable__surface {
+:where(.ui-craft-pressable__surface) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +35,7 @@
   pointer-events: none;
   transition: transform var(--craft-press-duration, 120ms) var(--craft-ease, ease-out);
 }
-.ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):active > .ui-craft-pressable__surface {
+:where(.ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):active > .ui-craft-pressable__surface) {
   transform: translateY(var(--craft-press-travel, 1px)) scale(var(--craft-press-scale, .97));
 }
 .ui-craft-pressable:focus-visible,
@@ -48,10 +52,14 @@
   opacity: var(--craft-disabled-opacity, .55);
 }
 @media (hover: hover) and (pointer: fine) {
-  .ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):hover > .ui-craft-pressable__surface {
+  :where(.ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):hover > .ui-craft-pressable__surface) {
     background: var(--craft-control-hover-bg, var(--craft-control-bg, ButtonFace));
     border-color: var(--craft-control-hover-border, Highlight);
   }
+}
+/* Pressed fill. It comes after hover so a mouse press shows it. Unset, it keeps the hover or rest fill. */
+:where(.ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):active > .ui-craft-pressable__surface) {
+  background: var(--craft-control-pressed-bg, var(--craft-control-hover-bg, var(--craft-control-bg, ButtonFace)));
 }
 /* Structure: label.ui-craft-switch > input.ui-craft-switch__input + span.
    The input needs type="checkbox" and role="switch". The span holds its name. */
@@ -118,7 +126,7 @@
   .ui-craft-pressable__surface {
     transition: none;
   }
-  .ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):active > .ui-craft-pressable__surface {
+  :where(.ui-craft-pressable:not(:disabled):not([aria-disabled="true"]):active > .ui-craft-pressable__surface) {
     transform: none;
     background: var(--craft-control-pressed-bg, Highlight);
     color: var(--craft-control-pressed-ink, HighlightText);

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0] - 2026-11-27
+
+- A build, verify twice, review once loop: `verify.mjs --fix` writes the mechanical fixes (contrast, targets, focus rings, reduced motion), then a fresh reviewer judges alignment, focal point, motion, tactile controls and copy from a screenshot.
+- A craft floor and `assets/starter.css`: 44 px targets, a 2 px focus ring, reduced motion and a spacing scale from the first write.
+- Design systems to borrow from in `references/systems/`.
+- Removed scripts and files that only served the author's own evaluation.
+- New README: what it checks, results on 4 fresh prompts, and a model comparison.
+
 ## [0.3.2] - 2026-11-23
 
 - `verify.mjs` finds Microsoft Edge when Playwright and Chrome are missing, so the browser checks run on a stock Windows machine.

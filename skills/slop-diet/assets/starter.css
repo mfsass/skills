@@ -1,0 +1,58 @@
+/* slop-diet craft starter: paste into the page's <style> first, then map the tokens to the plan (or the host system).
+   All selectors sit in :where(), so specificity is 0 and every component rule you write wins.
+   It sets the floor only (targets, focus, motion, spacing); the look comes from the plan.
+   Every rule here is a fallback. The page's own rules replace it; nothing here is a style to keep. */
+:root {
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --target: 44px;                 /* every control, every width: 390 AND 1440 */
+  --focus: #1a4fd6;               /* ink or a dark accent step with 3:1 on EVERY surface it sits on; on a dark band set it light */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+}
+/* 1. Targets: 44x44 at every width, also at 1440 and in dense tables (make rows tighter, never the button). */
+:where(button, [role=button], [role=tab], [role=radio], [role=switch], [role=checkbox], summary, select,
+       input:not([type=hidden], [type=checkbox], [type=radio], [type=range]), textarea, a.btn, .chip) {
+  min-height: var(--target);
+  box-sizing: border-box;
+}
+:where(.icon-btn, button[aria-label], a[aria-label]) { min-width: var(--target); }   /* icon-only buttons: give them class icon-btn */
+:where(input[type=range]) { min-height: var(--target); }            /* the input box, not only the thumb */
+:where(nav a, footer a, .links a, [role=tablist] a) {                /* links outside running text are targets too */
+  display: inline-flex; align-items: center; min-height: var(--target);
+}
+:where(label:has(> input[type=checkbox], > input[type=radio])) {    /* tap the whole row */
+  display: flex; align-items: center; gap: var(--space-3); min-height: var(--target);
+}
+/* No overlapping hit boxes: siblings keep >= 8px apart; a control never sits on another control.
+   Password Show/Hide, clear and search buttons sit BESIDE the field in a flex row (.field-row), not absolutely on it.
+   A sticky or fixed action bar must not cover controls at rest: keep it in normal flow, or reserve its height below the content. */
+:where(.field-row) { display: flex; gap: var(--space-2); align-items: stretch; }
+:where(.field-row > input) { flex: 1; min-width: 0; }
+:where(.actions, .toolbar, .btn-row) { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+/* 2. Focus: a visible ring on the control itself, 2px, 3:1 against the surface beside it.
+   A switch is <input type=checkbox role=switch> with appearance: none, drawn on the input,
+   so the ring sits on the input (not on an opacity-0 input inside a styled span). */
+:where(a, button, input, select, textarea, summary, [tabindex], [role=button], [role=tab], [role=switch], [role=radio], [role=checkbox]):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+:where(input[type=checkbox][role=switch]) {
+  appearance: none; width: 44px; height: 26px; margin: 9px 0; border-radius: 13px; position: relative; cursor: pointer;
+}
+
+/* 3. Feedback timing only. State changes ease instead of snapping; text colour never changes to a hue below 4.5:1.
+   No hover or press look is set here on purpose. Write one for the product, for example:
+   a press-in (scale .96-.98 or 1-4px travel), a darker fill, a shadow that drops, an inset, or a moving indicator.
+   One press style per control kind, used the same way across the page (a switch thumb squash next to a button press is fine).
+   Disabled controls never move. */
+:where(button, [role=button], a.btn, .chip, [role=tab], [role=radio]) {
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, box-shadow 140ms ease, transform 120ms var(--ease-out);
+}
+:where(h1, h2, h3) { text-wrap: balance; } :where(p) { text-wrap: pretty; max-width: 65ch; }
+:where(.num, td, output) { font-variant-numeric: tabular-nums; }
+
+/* 4. Reduced motion: every transition and animation off, content visible. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+  .reveal, [class*=reveal] { opacity: 1 !important; transform: none !important; }
+}
